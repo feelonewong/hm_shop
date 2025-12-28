@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:hm_shop/pages/Cart/index.dart';
+import 'package:hm_shop/pages/Category/index.dart';
+import 'package:hm_shop/pages/Home/index.dart';
+import 'package:hm_shop/pages/Mine/index.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -46,10 +50,16 @@ class _MainPageState extends State<MainPage> {
     });
   }
 
+  List<Widget> _getShowWidget() {
+    return [HomeView(), CategoryView(), CartView(), MineView()];
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Text("主页")),
+      body: SafeArea(
+        child: IndexedStack(index: _currentIndex, children: _getShowWidget()),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         onTap: (index) {
           setState(() {
