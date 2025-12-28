@@ -1,0 +1,87 @@
+# ========================
+# Flutter / Dart
+# ========================
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# Dart analysis
+analysis_options.yaml
+
+# ========================
+# IDE
+# ========================
+
+# VS Code
+.vscode/
+
+# IntelliJ / Android Studio
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# ========================
+# Android
+# ========================
+android/.gradle/
+android/local.properties
+android/**/GeneratedPluginRegistrant.java
+
+# Keystore files
+*.jks
+*.keystore
+key.properties
+
+# ========================
+# iOS
+# ========================
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Flutter/App.framework
+ios/Flutter/Generated.xcconfig
+ios/Flutter/ephemeral/
+ios/Runner/GeneratedPluginRegistrant.*
+
+# Xcode
+*.xcworkspace
+*.xcuserstate
+*.xcuserdatad/
+DerivedData/
+
+# ========================
+# macOS
+# ========================
+macos/Pods/
+macos/Flutter/GeneratedPluginRegistrant.swift
+
+# ========================
+# Windows
+# ========================
+windows/flutter/ephemeral/
+
+# ========================
+# Linux
+# ========================
+linux/flutter/ephemeral/
+
+# ========================
+# Logs & temp
+# ========================
+*.log
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
+
+# ========================
+# Env / secrets
+# ========================
+.env
+.env.*
