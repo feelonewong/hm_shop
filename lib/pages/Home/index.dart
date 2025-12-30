@@ -28,7 +28,7 @@ class _HomeViewState extends State<HomeView> {
     BannerItem(
       id: "3",
       imgUrl:
-          'https://images.unsplash.com/photo-1761839262867-af53d08b0eb5?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw4fHx8ZW58MHx8fHx8',
+          'https://images.unsplash.com/photo-1761839257789-20147513121a?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxNXx8fGVufDB8fHx8fA%3D%3D',
     ),
   ];
   List<Widget> _getScrollViewChildren() {
