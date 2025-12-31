@@ -7,6 +7,35 @@ class BannerItem {
   // 拓展一个工厂函数 用factory来声明
   // 一般用来创建实例对象
   factory BannerItem.formJSON(Map<String, dynamic> json) {
-    return BannerItem(id: json["id"] ?? "", imgUrl: json["imgUrl"]?? "");
+    return BannerItem(id: json["id"] ?? "", imgUrl: json["imgUrl"] ?? "");
+  }
+}
+
+class CategoryItem {
+  String id;
+  String name;
+  String picture;
+  List<CategoryItem>? children;
+
+  CategoryItem({
+    required this.id,
+    required this.picture,
+    required this.name,
+    this.children,
+  });
+
+  factory CategoryItem.formJSON(Map<String, dynamic> json) {
+    return CategoryItem(
+      id: json["id"] ?? "",
+      name: json["name"] ?? "",
+      picture: json["picture"] ?? "",
+      children: json["children"] == null
+          ? null
+          : (json["children"] as List)
+                .map(
+                  (item) => CategoryItem.formJSON(item as Map<String, dynamic>),
+                )
+                .toList(),
+    );
   }
 }
