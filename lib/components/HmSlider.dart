@@ -64,6 +64,7 @@ class _HmSliderState extends State<HmSlider> {
             onTap: () {
               _carouselController.jumpToPage(index);
             },
+            // 属性发生变化的时候自动实现动画效果
             child: AnimatedContainer(
               // 整体加一个动画的效果 过渡时间为300ms
               duration: Duration(milliseconds: 300),

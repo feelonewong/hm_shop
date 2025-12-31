@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hm_shop/api/home.dart';
 import 'package:hm_shop/components/HmCategory.dart';
 import 'package:hm_shop/components/HmHot.dart';
 import 'package:hm_shop/components/HmMoreList.dart';
@@ -14,23 +15,7 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  final List<BannerItem> _bannerList = [
-    BannerItem(
-      id: "1",
-      imgUrl:
-          'https://images.unsplash.com/photo-1761839262867-af53d08b0eb5?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw4fHx8ZW58MHx8fHx8',
-    ),
-    BannerItem(
-      id: "2",
-      imgUrl:
-          'https://images.unsplash.com/photo-1761839258513-099c3121d72d?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    ),
-    BannerItem(
-      id: "3",
-      imgUrl:
-          'https://images.unsplash.com/photo-1761839257789-20147513121a?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxNXx8fGVufDB8fHx8fA%3D%3D',
-    ),
-  ];
+  List<BannerItem> _bannerList = [];
   List<Widget> _getScrollViewChildren() {
     return [
       SliverToBoxAdapter(child: HmSlider(bannerList: _bannerList)),
@@ -56,6 +41,19 @@ class _HomeViewState extends State<HomeView> {
       SliverToBoxAdapter(child: SizedBox(height: 10)),
       HmMoreList(),
     ];
+  }
+
+  @override
+  void initState() {
+    // TODO: implement activate
+    super.initState();
+    _getBannerList();
+  }
+
+  _getBannerList() async {
+    _bannerList = await getBannerListAPI();
+
+    setState(() {});
   }
 
   @override
